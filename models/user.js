@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     },
     email:{
        type: String,
-       require: [true, "Name is required"],
+       require: [true, "Email is required"],
        index : true, 
        lowercase : true,
        unique: true,
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     password :String,
     role:{
         type:String,
-        default: "user,"
+        default: "user",
     },
     image: String,
     resetCode: {
