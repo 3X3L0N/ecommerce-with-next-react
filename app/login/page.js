@@ -8,7 +8,7 @@ export default function Login(){
     const[email, setEmail]=useState("");
     const[password, setPassword]=useState("");
     const[loading, setLoading]=useState(false);
-
+    
     const router= useRouter();
 
     const handleSubmit = async (e)=> {
@@ -58,7 +58,6 @@ export default function Login(){
                                  className="form-control mb-4"
                                  placeholder="Enter your password"
                           />
-
                           <button
                            className="btn btn-primary btn-raised" disabled={loading || !email ||!password}
                            >

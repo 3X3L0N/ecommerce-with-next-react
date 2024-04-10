@@ -18,7 +18,7 @@ export default function Register(){
           const response= await fetch(`${process.env.API}/register`,{
            method: "POST",
            headers:{
-            "Content-type":"application/json",
+            "Content-Type":"application/json",
            },
            body: JSON.stringify({
             name,

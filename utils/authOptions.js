@@ -1,5 +1,5 @@
+import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/user";
-import  CredentialsProvider  from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 import dbConnect from "@/utils/dbConnect";
 
@@ -8,10 +8,10 @@ export const authOptions ={
         strategy: "jwt",
     },
     providers:[
-        CredentialsProvider({ 
-        async authorize(Credentials, req){
+    CredentialsProvider({ 
+        async authorize(credentials, req){
             dbConnect();
-            const {email, password}= Credentials;
+            const {email, password}= credentials;
             const user = await User.findOne({email});
 
             if(!user){
